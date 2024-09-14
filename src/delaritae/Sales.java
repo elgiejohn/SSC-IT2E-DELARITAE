@@ -3,47 +3,36 @@ package delaritae;
 import java.util.Scanner;
 
 public class Sales {
- 
-    public void getsales(){
-    Scanner input = new Scanner (System.in);
+    String name;
+    String prodName;
+    double quality, price, cash, total, change;
     
-    String cname,pname;
-    int qty, price, cash, tdue, change;
-    
-    System.out.print("Enter customer Name: ");
-    cname = input.nextLine();
-    System.out.print("Enter Product Name: ");
-    pname = input.nextLine(); 
-    System.out.print("Enter Quantity: ");
-    qty = input.nextInt(); 
-    System.out.print("Enter Price: ");
-    price = input.nextInt(); 
-    System.out.print("Enter Cash: ");
-    cash = input.nextInt(); 
-
-  
-    System.out.println("------------------------------");
-    System.out.println("RECEIRT");
-    System.out.println("------------------------------");
-    
-    System.out.println("Name:"+cname);
-    
-    System.out.println("Item Name:"+pname);
-    System.out.println("Quantity:"+qty);
-    
-    System.out.println("------------------------------");
-    
-    tdue = price*qty;
-    System.out.println("Total Due:"+tdue+".00");
-    System.out.println("cash:"+cash+".00");
-    
-    System.out.println("------------------------------");
-    
-    change = cash - tdue;
-     System.out.println("change:"+change+".00");
-    
+    public void addSale(String name, String pname, double qty, double price){
+        this.name = name;
+        this.prodName = pname;
+        this.quality = qty;
+        this.price = price;
+       
     }
     
+    public void viewReceipt(){
+        change = cash - total;
+        
+        System.out.println("--------------------------------");
+        System.out.println("\tRECEIPT");
+        System.out.println("--------------------------------");
+        
+        System.out.println("Customer Name: " + name);
+        System.out.println("\nItem Name: " + prodName);
+        System.out.printf("Quantity: %.0f\n", quality);
+        System.out.printf("Unit Price: %.2f\n", price);
+        System.out.println("--------------------------------");
+        
+        System.out.printf("Total Due: %.2f\n", total);
+        System.out.printf("Cash: %.2f\n", cash);
+        System.out.println("--------------------------------");
+        System.out.printf("Change: %.2f\n", change);
+    }
 }
 
     

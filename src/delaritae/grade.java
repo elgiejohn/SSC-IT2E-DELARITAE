@@ -1,11 +1,12 @@
 
 package delaritae;
+
 import java.util.Scanner;
 
-public class grade {
-     public void getGrades(){
+public class Grade {
+       public void getGrades(){
         Scanner sc = new Scanner(System.in);
-        grades[] gr = new grades[100];
+        Grades[] gr = new Grades[100];
         
         System.out.print("Enter no. of students: ");
         int snum = sc.nextInt();
@@ -25,7 +26,7 @@ public class grade {
             System.out.print("Final: ");
             double fin = sc.nextDouble();
             
-            gr[i] = new grades();
+            gr[i] = new Grades();
             gr[i].addGrades(id, name, pre, mid, pref, fin);
         }
         
@@ -36,7 +37,7 @@ public class grade {
         for(int i = 0; i < snum; i++){
             gr[i].ave = (gr[i].p+gr[i].m+gr[i].pf+gr[i].f)/4;
             TCA = TCA + gr[i].ave;
-            gr[i].getGrades();
+            gr[i].viewGrades();
             
             if(gr[i].ave > 3.0){
                 passed++;
@@ -51,11 +52,5 @@ public class grade {
         System.out.println("No. of Passed: "+passed);
         System.out.println("No. of Failed: "+failed);
         
-    }
-
-    private static class Grades {
-
-        public Grades() {
-        }
     }
 }
