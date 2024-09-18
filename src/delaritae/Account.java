@@ -1,4 +1,3 @@
-
 package delaritae;
 
 import java.util.Scanner;
@@ -111,4 +110,4 @@ public class Account {
         return hasUppercase && hasLowercase && hasSpecialChar;
     }
 }
-}
+
